@@ -45,6 +45,10 @@ def on_intent(intent_request, session):
         return intent_handlers.handle_quest_format(intent, session)
     elif intent_name == config.Intent.ADD_ITEM_INTENT:
         return intent_handlers.handle_add_item(intent, session)
+    elif intent_name == config.Intent.UPDATE_INVENTORY_INTENT:
+        return alexa_responses.updateInventory_response(intent, session)
+    elif intent_name == config.Intent.UPDATE_ITEM_INTENT:
+        return intent_handlers.handle_update_item(intent, session)
     else:
         raise ValueError("Invalid intent")
 

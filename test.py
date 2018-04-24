@@ -4,7 +4,7 @@ simple test should be done here, before deployment. for more complex test, go to
 """
 import intent_handlers
 import config
-from helper_functions import put_add_item, get_authen
+from helper_functions import put_add_item, get_authen, update_item
 from alexa_responses import add_item_response
 
 def test():
@@ -62,6 +62,13 @@ def test_addItem_response():
 
     print(res)
 
+def test_update_item():
+    intent = {}
+    session = {'user': {'userId': config.ALEXA_ID_SAMPLE}}
+    intent_handlers.handle_update_item(intent, session)
+    #update_item('5a0baf55180916352c946b25', 'apple', 2, 'count')
+    #update_item('5a0baf55180916352c946b25', 'strawberry', 12, 'count')
+
 
 def test_alexa_registration():
     intent = {config.SLOTS: {
@@ -80,4 +87,5 @@ def test_alexa_registration():
 
 if __name__ == '__main__':
     #test_check_profile()
-    test_view_inventory()
+    #test_view_inventory()
+    test_update_item()

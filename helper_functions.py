@@ -1,3 +1,4 @@
+import pymongo
 import requests
 import json
 import functools
@@ -117,6 +118,53 @@ def put_add_item(user_id, access_token, name, quantity, quantity_type, type):
     '''
 
 
+def update_item(user_id, access_token, name, amount_eaten, quantityType):
+    collection = db["food_items"]  # collection = db['food_items']
+    user_id = ObjectId(user_id)
+    #cursor = collection.find({"user_id": user_id, "name": name, "quantity_type": quantityType})
+    cursor = collection.find({"user_id": user_id, "name": name, "quantity_type": quantityType}).sort("input_date",pymongo.ASCENDING)
+    today = datetime.now().date()
+    today = datetime(today.year, today.month, today.day)
+
+
+    print("cursor: {}".format(cursor.count()))
+    if cursor.count() > 0:
+        for document in cursor:
+            cur_quant = document['quantity']
+            if document['exp_date'] >= today and cur_quant != 0:
+                print(document['name'], document['quantity_type'], cur_quant, document['_id'], document["input_date"])
+
+                if cur_quant >= amount_eaten and amount_eaten > 0:
+                    print("call put function for {} {}".format(document['_id'], cur_quant))
+                    #call_api_to_update_food_item(document['_id'], amount_eaten, user_id, access_token)
+                    amount_eaten = amount_eaten - cur_quant
+                    print("inside if amt: {}".format(amount_eaten))
+                    break
+                else:
+                    print("call put function for {} {}".format(document['_id'], cur_quant))
+                    #call_api_to_update_food_item(document['_id'], amount_eaten, user_id, access_token)
+                    amount_eaten = amount_eaten - cur_quant
+                    print("inside else amt: {}".format(amount_eaten))
+        message = "food item updated"
+    else:
+        message = "no items found with matching criteria"
+    #print(message)
+    return message
+
+def call_api_to_update_food_item(item_id, amount_eaten, user_id, access_token):
+    #item_id = '5ad572fc009089000b5adc6a'
+    url = ('/food-items/{}/quantity').format(item_id)
+    print("url {}".format(url))
+    user_id = str(user_id)
+
+    r = requests.put(build_url(url),
+                     data=json.dumps({'amount': amount_eaten, 'action': 'eat', 'message': 'from ChatBot'}),
+                     headers={config.USER_ID: user_id, config.ACCESS_TOKEN: access_token, 'Content-Type': 'application/json'})
+    if r.status_code != 200:
+        raise ValueError(r.status_code)
+
+
+
 # --------------- authen decorator ----------------------
 
 def verify_alexa_login():
@@ -162,7 +210,7 @@ def build_url(path=''):
     return '{}/{}'.format(get_host(), cleanse_path(path))
 
 def get_session_attributes(session):
-    print("returning from sessin_attributes {}".format(session))
+    #print("returning from sessin_attributes {}".format(session))
     return session.get(config.SESSION_ATTRIBUTES, {})
 
 def set_session_attribute(session, session_attributes):
@@ -172,9 +220,9 @@ def get_alexa_user_id(session):
     return session['user']['userId']
 
 def get_authen(session):
-    print("sending to get session {}".format(session))
+    #print("sending to get session {}".format(session))
     session_attributes = get_session_attributes(session)
-    print("printing session attributes {}".format(session_attributes))
+    #print("printing session attributes {}".format(session_attributes))
     return (session_attributes[config.USER_ID], session_attributes[config.ACCESS_TOKEN])
 
 def save_authen(session, user_id, access_token):

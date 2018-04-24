@@ -44,6 +44,50 @@ def handle_quest_format(intent, session):
     count = helper_functions.get_item_quantity(*helper_functions.get_authen(session), item)
     return alexa_responses.get_questFormat_response(item, count)
 
+@helper_functions.verify_alexa_login()
+def handle_update_item(intent, session):
+    #res1 = helper_functions.get_authen(session)
+    #print(res1[0])
+    #print(type(res1[0]))
+    #print(res1[1])
+    print("Inside handle_update_item access token: {}".format(session['session_attributes']['access_token']))
+    user_id = session['session_attributes']['user_id']
+    access_token = session['session_attributes']['access_token']
+    '''
+    name = 'bananas'
+    amount_eaten = 1
+    quantity_type = 'count'
+    for x in config.FOOD_ITEM_DICT:
+        if x["slot_value"] == name:
+            print(x["name"])
+            name = x["name"]
+            print("name : {}".format(name))
+    '''
+    name = 'not supported'
+    amount_eaten = 0
+    quantity_type = 'not supported'
+    
+    if 'quantity' in intent['slots']:
+        if 'value' in intent['slots']['quantity']:
+            amount_eaten = intent['slots']['quantity']['value']
+
+            if 'quantityType' in intent['slots']:
+                if 'value' in intent['slots']['quantityType']:
+                    quantity_type = intent['slots']['quantityType']['value']
+                    if quantity_type == 'pound':
+                        quantity_type = 'lb'
+
+            if 'foodItem' in intent['slots']:
+                if 'value' in intent['slots']['foodItem']:
+                    name = intent['slots']['foodItem']['value']
+
+            for x in config.FOOD_ITEM_DICT:
+                if x["slot_value"] == name:
+                    name = x["name"]
+
+    #res = helper_functions.update_item(str(res1[0]), res1[1], name, int(amount_eaten), quantity_type)
+    res = helper_functions.update_item(user_id, access_token, name, int(amount_eaten), quantity_type)
+    return alexa_responses.updateItem_response(res)
 
 @helper_functions.verify_alexa_login()
 def handle_add_item(intent, session):

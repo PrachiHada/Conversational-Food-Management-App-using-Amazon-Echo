@@ -91,3 +91,14 @@ def add_item_response(res):
     speech_output =  res
     print(speech_output)
     return build_response({}, build_speechlet_response(card_title,speech_output))
+
+def updateInventory_response(intent, session):
+    card_title = 'UpdateInventory'
+    speech_output = 'You have chosen to update inventory. Please provide amount of food consumed in format: update 4 count apples or update 1 pound apples'
+    return build_response({}, build_speechlet_response(card_title,speech_output))
+
+def updateItem_response(res):
+    card_title = 'UpdateItem'
+    speech_output = res
+    print(speech_output)
+    return build_response({}, build_speechlet_response(card_title, speech_output))

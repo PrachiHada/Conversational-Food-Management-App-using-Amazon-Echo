@@ -30,6 +30,8 @@ class Intent():
     ASK_QUESTION_INTENT = 'AskQuestion'
     QUES_FORMAT_INTENT = 'QuesFormat'
     ADD_ITEM_INTENT = 'AddItems'
+    UPDATE_INVENTORY_INTENT = 'UpdateInventory'
+    UPDATE_ITEM_INTENT = 'UpdateItem'
 
 # ------------------ requests ---------------------------
 
