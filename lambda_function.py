@@ -49,6 +49,22 @@ def on_intent(intent_request, session):
         return alexa_responses.updateInventory_response(intent, session)
     elif intent_name == config.Intent.UPDATE_ITEM_INTENT:
         return intent_handlers.handle_update_item(intent, session)
+    elif intent_name == config.Intent.MAIN_MENU_INTENT:
+        return alexa_responses.get_main_menu_response()
+    elif intent_name == config.Intent.MOST_CONSUMED_INTENT:
+        return intent_handlers.handle_most_consumed(intent, session)
+    elif intent_name == config.Intent.MOST_WASTED_INTENT:
+        return intent_handlers.handle_most_wasted(intent, session)
+    elif intent_name == config.Intent.SUGGEST_SHOPPING_LIST_INTENT:
+        return intent_handlers.handle_suggest_shopping_list(intent, session)
+    elif intent_name == config.Intent.VIEW_SHOPPING_LIST_INTENT:
+        return intent_handlers.handle_view_shopping_list(intent, session)
+    elif intent_name == config.Intent.CREATE_SHOPPING_LIST_INTENT:
+        return alexa_responses.get_create_shopping_list_response()
+    elif intent_name == config.Intent.ADD_ITEM_NEW_SHOPPING_LIST_INTENT:
+        return intent_handlers.handle_add_items_new_shopping_list(intent, session)
+    elif intent_name == config.Intent.REMOVE_FROM_LIST_INTENT:
+        return intent_handlers.handle_remove_from_shopping_list(intent, session)
     else:
         raise ValueError("Invalid intent")
 

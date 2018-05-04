@@ -163,7 +163,111 @@ def call_api_to_update_food_item(item_id, amount_eaten, user_id, access_token):
     if r.status_code != 200:
         raise ValueError(r.status_code)
 
+def create_shopping_list(id, shoppingList):
+    mycollection = db["users"]
+    user_id = ObjectId(id)
+    mycollection.update({'_id': user_id}, {"$set": {"analysis.shopping_list": shoppingList}}, upsert=True)
+    var_response = " following items are added to inventory: {}".format(shoppingList)
+    return var_response
 
+def remove_from_shopping_list(id, removelist):
+    mycollection = db["users"]
+    user_id = ObjectId(id)
+    cursor = mycollection.find({"_id": user_id, "analysis.shopping_list": {"$exists": True}})
+    old_shopping_list = []
+    if cursor.count() > 0:
+        for document in cursor:
+            old_shopping_list = document['analysis']['shopping_list']
+        after_remove = c = [x for x in old_shopping_list if x not in removelist]
+        message = "items removed successfully. To view updated shopping list say: "
+
+def update_shopping_list(id, action, listItems):
+    mycollection = db["users"]
+    user_id = ObjectId(id)
+    cursor = mycollection.find({"_id": user_id, "analysis.shopping_list": {"$exists": True}})
+    old_shopping_list = []
+    if cursor.count() > 0:
+        for document in cursor:
+            old_shopping_list = document['analysis']['shopping_list']
+    if action == "add":
+        combine = old_shopping_list + listItems
+        final_list = []
+        for num in combine:
+            if num not in final_list:
+                final_list.append(num)
+        mycollection.update({'_id': user_id}, {"$set": {"analysis.shopping_list": final_list}}, upsert=True)
+        message = "items added successfully"
+    elif action == "remove":
+        after_remove = c = [x for x in old_shopping_list if x not in listItems]
+        message = "items removed successfully"
+    else:
+        message = "Sorry, I did not understand. To add items to shopping list please say Add to shopping list, to remove items say Remove from shopping list, "\
+                "to view shopping list say - View shopping list"
+
+    return message
+
+def view_shopping_list(id):
+    mycollection = db["users"]
+    user_id = ObjectId(id)
+    cursor = mycollection.find({"_id": user_id, "analysis.shopping_list": {"$exists": True}})
+    old_shopping_list = []
+    if cursor.count() > 0:
+        for document in cursor:
+            old_shopping_list = document['analysis']['shopping_list']
+            message = "you have added following items to your shopping list {}".format(old_shopping_list)
+    else:
+        message = "Your shopping list is empty"
+    return message
+
+
+def view_suggestive_shopping_list(id):
+    mycollection = db["users"]
+    user_id = ObjectId(id)
+    cursor = mycollection.find({"_id": user_id, "analysis.suggestive_shopping_list": {"$exists": True}})
+    suggestive_shopping_list = []
+    if cursor.count() > 0:
+        for document in cursor:
+            suggestive_shopping_list = document['analysis']['suggestive_shopping_list']
+            message = "CONSUMit has suggested you food items based on your consumption pattern. Following items are finished in your inventory: {}".format(suggestive_shopping_list)
+    else:
+        message = "We do not have any suggestions for you as you have less items in your inventory."
+    return message
+
+def view_most_consumed(id):
+    mycollection = db["users"]
+    user_id = ObjectId(id)
+    cursor = mycollection.find({"_id": user_id, "analysis.most_consumed": {"$exists": True}})
+    analysis = {}
+    if cursor.count() > 0:
+        for document in cursor:
+            itemList = document['analysis']['most_consumed']
+    else:
+        itemList = {}
+
+    if itemList != analysis:
+        message = "The most consumed food items are: {}".format(itemList)
+    else:
+        message = "Currently, you have not consumed enough items. So, consumeit cannot suggest you most consumed food items"
+    print(message)
+    return message
+
+def view_most_wasted(id):
+    mycollection = db["users"]
+    user_id = ObjectId(id)
+    cursor = mycollection.find({"_id": user_id, "analysis.most_wasted": {"$exists": True}})
+    analysis = {}
+    if cursor.count() > 0:
+        for document in cursor:
+            itemList = document['analysis']['most_wasted']
+    else:
+        itemList = {}
+
+    if itemList != analysis:
+        message = "The most wasted food items are: {}".format(itemList)
+    else:
+        message = "Currently, you have not wasted enough items. So, consumeit cannot suggest you most wasted food items"
+    print(message)
+    return message
 
 # --------------- authen decorator ----------------------
 

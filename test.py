@@ -2,10 +2,9 @@
 Place to configure and write tests
 simple test should be done here, before deployment. for more complex test, go to alexa dev console
 """
-import intent_handlers
 import config
-from helper_functions import put_add_item, get_authen, update_item
-from alexa_responses import add_item_response
+import intent_handlers
+import alexa_responses
 
 def test():
     pass
@@ -65,9 +64,14 @@ def test_addItem_response():
 def test_update_item():
     intent = {}
     session = {'user': {'userId': config.ALEXA_ID_SAMPLE}}
-    intent_handlers.handle_update_item(intent, session)
+    #intent_handlers.handle_update_item(intent, session)
+    #intent_handlers.handle_most_wasted(intent, session)
     #update_item('5a0baf55180916352c946b25', 'apple', 2, 'count')
     #update_item('5a0baf55180916352c946b25', 'strawberry', 12, 'count')
+    #intent_handlers.handle_suggest_shopping_list(intent, session)
+    #intent_handlers.handle_view_shopping_list(intent, session)
+    #alexa_responses.get_create_shopping_list_response()
+    intent_handlers.handle_add_items_new_shopping_list(intent, session)
 
 
 def test_alexa_registration():

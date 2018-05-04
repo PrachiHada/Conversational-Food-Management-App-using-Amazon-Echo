@@ -133,3 +133,66 @@ def handle_add_item(intent, session):
     #put_add_item(user_id, access_token, 'apple', 11, 'count', 'fruit')
     print(var_response)
     return alexa_responses.add_item_response(var_response)
+
+
+@helper_functions.verify_alexa_login()
+def handle_most_consumed(intent, session):
+    user_id = session['session_attributes']['user_id']
+    access_token = session['session_attributes']['access_token']
+    res = helper_functions.view_most_consumed(user_id)
+    return alexa_responses.get_most_consumed_response(res)
+
+@helper_functions.verify_alexa_login()
+def handle_most_wasted(intent, session):
+    user_id = session['session_attributes']['user_id']
+    access_token = session['session_attributes']['access_token']
+    res = helper_functions.view_most_wasted(user_id)
+    return alexa_responses.get_most_wasted_response(res)
+
+@helper_functions.verify_alexa_login()
+def handle_suggest_shopping_list(intent, session):
+    user_id = session['session_attributes']['user_id']
+    access_token = session['session_attributes']['access_token']
+    res = helper_functions.view_suggestive_shopping_list(user_id)
+    return alexa_responses.get_suggest_shopping_list_response(res)
+
+@helper_functions.verify_alexa_login()
+def handle_view_shopping_list(intent, session):
+    user_id = session['session_attributes']['user_id']
+    access_token = session['session_attributes']['access_token']
+    res = helper_functions.view_shopping_list(user_id)
+    return alexa_responses.get_view_shopping_list_response(res)
+
+@helper_functions.verify_alexa_login()
+def handle_add_items_new_shopping_list(intent, session):
+    user_id = session['session_attributes']['user_id']
+    print(user_id)
+    #access_token = session['session_attributes']['access_token']
+    var_foodItem = 'item'
+    shoppingList = []
+    for x in config.SEQUENCE_LIST:
+        foodItem = var_foodItem + x
+        if foodItem in intent['slots']:
+            if 'value' in intent['slots'][foodItem]:
+                item_name = intent['slots'][foodItem]['value']
+                shoppingList.append(item_name)
+
+    res = helper_functions.create_shopping_list(user_id, shoppingList)
+    return alexa_responses.get_add_item_shopping_list_response(res)
+
+@helper_functions.verify_alexa_login()
+def handle_remove_from_shopping_list(intent, session):
+    user_id = session['session_attributes']['user_id']
+    print(user_id)
+    #access_token = session['session_attributes']['access_token']
+    var_foodItem = 'item'
+    remove_from_shopping_list = []
+    for x in config.SEQUENCE_LIST:
+        foodItem = var_foodItem + x
+        if foodItem in intent['slots']:
+            if 'value' in intent['slots'][foodItem]:
+                item_name = intent['slots'][foodItem]['value']
+                remove_from_shopping_list.append(item_name)
+
+    res = helper_functions.create_shopping_list(user_id, remove_from_shopping_list)
+    return alexa_responses.get_add_item_shopping_list_response(res)

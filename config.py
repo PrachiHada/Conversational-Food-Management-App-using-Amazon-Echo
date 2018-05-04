@@ -32,12 +32,21 @@ class Intent():
     ADD_ITEM_INTENT = 'AddItems'
     UPDATE_INVENTORY_INTENT = 'UpdateInventory'
     UPDATE_ITEM_INTENT = 'UpdateItem'
+    MAIN_MENU_INTENT = 'MainMenu'
+    MOST_CONSUMED_INTENT = 'MostConsumed'
+    MOST_WASTED_INTENT = 'MostWasted'
+    SUGGEST_SHOPPING_LIST_INTENT = 'SuggestShoppingList'
+    VIEW_SHOPPING_LIST_INTENT = 'ViewShoppingList'
+    CREATE_SHOPPING_LIST_INTENT = 'CreateNewShoppingList'
+    ADD_ITEM_NEW_SHOPPING_LIST_INTENT = 'AddItemsNewShoppingList'
+    REMOVE_FROM_LIST_INTENT = 'RemoveFromShoppingList'
 
 # ------------------ requests ---------------------------
 
 # HOST = 'http://756b375e.ngrok.io'
 #HOST = 'http://52.53.230.217:5000'
-HOST = 'http://54.152.119.134:5000'
+#apr2#HOST = 'http://54.152.119.134:5000'
+HOST = 'http://consumit-TCP-load-balancer-e91db1be6adc1ff0.elb.us-east-1.amazonaws.com:5000'
 VERSION = '/api/v1.0'
 
 # ---------------------- sameple data ------------------------
@@ -89,3 +98,4 @@ FOOD_ITEM_DICT = [{"slot_value":"apple","name":"apple","type":"fruit"},
 ]
 
 SEQUENCE_LIST = ['One', 'Two', 'Three', 'Four', 'Five']
+SHOPPING_SEQUENCE_LIST = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten']
