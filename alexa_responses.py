@@ -152,8 +152,15 @@ def get_create_shopping_list_response():
     print(speech_output)
     return build_response({}, build_speechlet_response(card_title, speech_output))
 
+def get_remove_item_shopping_list_response(res):
+    card_title = 'RemoveFromShoppingList'
+    end_statement = 'What else would you like to do: to listen to menu options say: View Main Menu'
+    speech_output = '{}. {}'.format(res, end_statement)
+    print(speech_output)
+    return build_response({}, build_speechlet_response(card_title, speech_output))
+
 def get_add_item_shopping_list_response(res):
-    card_title = 'AddItemsNewShoppingList'
+    card_title = 'AddToShoppingList'
     end_statement = 'What else would you like to do: to listen to menu options say: View Main Menu'
     speech_output = '{}. {}'.format(res, end_statement)
     print(speech_output)

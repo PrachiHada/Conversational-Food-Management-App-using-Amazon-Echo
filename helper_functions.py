@@ -75,14 +75,17 @@ def get_item_quantity(user_id, access_token, foodItem):
             count = value
     return count
 
-def put_add_item(user_id, access_token, name, quantity, quantity_type, type):
+def put_add_item(user_id, access_token, name, quantity, quantity_type, type, expiry):
     quantity = int(quantity)
+    expiry = int(expiry)
+    '''
     if type == 'fruit':
         expiry = 7
     elif type == 'vegetable':
         expiry = 10
     else:
         expiry = 5
+    '''
 
     if name !=  'not Supported':
         url = '/food-items'
@@ -179,7 +182,31 @@ def remove_from_shopping_list(id, removelist):
         for document in cursor:
             old_shopping_list = document['analysis']['shopping_list']
         after_remove = c = [x for x in old_shopping_list if x not in removelist]
-        message = "items removed successfully. To view updated shopping list say: "
+        mycollection.update({'_id': user_id}, {"$set": {"analysis.shopping_list": after_remove}}, upsert=True)
+        message = "items removed successfully. To view updated shopping list say: View Shopping List"
+    else:
+        message = "Please create shopping list to remove items into it."
+    return message
+
+def add_to_shopping_list(id, listItems):
+    mycollection = db["users"]
+    user_id = ObjectId(id)
+    cursor = mycollection.find({"_id": user_id, "analysis.shopping_list": {"$exists": True}})
+    old_shopping_list = []
+    if cursor.count() > 0:
+        for document in cursor:
+            old_shopping_list = document['analysis']['shopping_list']
+        combine = old_shopping_list + listItems
+        final_list = []
+        for num in combine:
+            if num not in final_list:
+                final_list.append(num)
+        mycollection.update({'_id': user_id}, {"$set": {"analysis.shopping_list": final_list}}, upsert=True)
+        message = "items added successfully"
+        message = "items added successfully. To view updated shopping list say: View Shopping List"
+    else:
+        message = "Please create shopping list to add items into it."
+    return message
 
 def update_shopping_list(id, action, listItems):
     mycollection = db["users"]

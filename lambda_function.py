@@ -65,6 +65,8 @@ def on_intent(intent_request, session):
         return intent_handlers.handle_add_items_new_shopping_list(intent, session)
     elif intent_name == config.Intent.REMOVE_FROM_LIST_INTENT:
         return intent_handlers.handle_remove_from_shopping_list(intent, session)
+    elif intent_name == config.Intent.ADD_TO_SHOPPING_LIST_INTENT:
+        return intent_handlers.handle_add_to_shopping_list(intent, session)
     else:
         raise ValueError("Invalid intent")
 

@@ -115,6 +115,12 @@ def handle_add_item(intent, session):
                         quantity_type = intent['slots'][quantityType]['value']
                         if quantity_type == 'pound':
                             quantity_type = 'lb'
+                        elif quantity_type == 'fluid ounce':
+                            quantity_type = 'fl oz'
+                        elif quantity_type == 'ounce':
+                            quantity_type = 'oz'
+                        elif quantity_type == 'gallon':
+                            quantity_type = 'gal'
                     else:
                         quantity_type = 'count'
 
@@ -124,8 +130,8 @@ def handle_add_item(intent, session):
 
                 for x in config.FOOD_ITEM_DICT:
                     if x["slot_value"] == name_var:
-                        print(x["name"], x["type"])
-                        helper_functions.put_add_item(user_id, access_token, x["name"], quantity, quantity_type, x["type"])
+                        print(x["name"], x["type"], x["expiry"])
+                        helper_functions.put_add_item(user_id, access_token, x["name"], quantity, quantity_type, x["type"], x["expiry"])
                         var_response = var_response + str(quantity) + " " + quantity_type + " " + x["name"] + ", "
 
 
@@ -194,5 +200,22 @@ def handle_remove_from_shopping_list(intent, session):
                 item_name = intent['slots'][foodItem]['value']
                 remove_from_shopping_list.append(item_name)
 
-    res = helper_functions.create_shopping_list(user_id, remove_from_shopping_list)
+    res = helper_functions.remove_from_shopping_list(user_id, remove_from_shopping_list)
+    return alexa_responses.get_remove_item_shopping_list_response(res)
+
+@helper_functions.verify_alexa_login()
+def handle_add_to_shopping_list(intent, session):
+    user_id = session['session_attributes']['user_id']
+    print(user_id)
+    #access_token = session['session_attributes']['access_token']
+    var_foodItem = 'item'
+    add_to_shopping_list = []
+    for x in config.SEQUENCE_LIST:
+        foodItem = var_foodItem + x
+        if foodItem in intent['slots']:
+            if 'value' in intent['slots'][foodItem]:
+                item_name = intent['slots'][foodItem]['value']
+                add_to_shopping_list.append(item_name)
+    print(add_to_shopping_list)
+    res = helper_functions.add_to_shopping_list(user_id, add_to_shopping_list)
     return alexa_responses.get_add_item_shopping_list_response(res)
