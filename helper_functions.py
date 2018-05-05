@@ -170,7 +170,7 @@ def create_shopping_list(id, shoppingList):
     mycollection = db["users"]
     user_id = ObjectId(id)
     mycollection.update({'_id': user_id}, {"$set": {"analysis.shopping_list": shoppingList}}, upsert=True)
-    var_response = " following items are added to inventory: {}".format(shoppingList)
+    var_response = " Following items are added to your shopping list: {}".format(shoppingList)
     return var_response
 
 def remove_from_shopping_list(id, removelist):
@@ -183,9 +183,9 @@ def remove_from_shopping_list(id, removelist):
             old_shopping_list = document['analysis']['shopping_list']
         after_remove = c = [x for x in old_shopping_list if x not in removelist]
         mycollection.update({'_id': user_id}, {"$set": {"analysis.shopping_list": after_remove}}, upsert=True)
-        message = "items removed successfully. To view updated shopping list say: View Shopping List"
+        message = "Items removed successfully. To view updated shopping list say: View Shopping List"
     else:
-        message = "Please create shopping list to remove items into it."
+        message = "Please create shopping list to remove items from it."
     return message
 
 def add_to_shopping_list(id, listItems):
@@ -202,8 +202,7 @@ def add_to_shopping_list(id, listItems):
             if num not in final_list:
                 final_list.append(num)
         mycollection.update({'_id': user_id}, {"$set": {"analysis.shopping_list": final_list}}, upsert=True)
-        message = "items added successfully"
-        message = "items added successfully. To view updated shopping list say: View Shopping List"
+        message = "Items added successfully. To view updated shopping list say: View Shopping List"
     else:
         message = "Please create shopping list to add items into it."
     return message
@@ -257,7 +256,7 @@ def view_suggestive_shopping_list(id):
             suggestive_shopping_list = document['analysis']['suggestive_shopping_list']
             message = "CONSUMit has suggested you food items based on your consumption pattern. Following items are finished in your inventory: {}".format(suggestive_shopping_list)
     else:
-        message = "We do not have any suggestions for you as you have less items in your inventory."
+        message = "Currently, you have not consumed enough items. So, consume it cannot suggest you what should you buy."
     return message
 
 def view_most_consumed(id):
@@ -274,7 +273,7 @@ def view_most_consumed(id):
     if itemList != analysis:
         message = "The most consumed food items are: {}".format(itemList)
     else:
-        message = "Currently, you have not consumed enough items. So, consumeit cannot suggest you most consumed food items"
+        message = "Currently, you have not consumed enough items. So, consume it cannot suggest you most consumed food items"
     print(message)
     return message
 

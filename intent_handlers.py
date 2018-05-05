@@ -1,6 +1,7 @@
 import helper_functions
 import alexa_responses
 import config
+from datetime import datetime
 
 
 @helper_functions.verify_alexa_login()
@@ -98,13 +99,17 @@ def handle_add_item(intent, session):
     var_count = 'count'
     var_quantityType = 'quantityType'
     var_foodItem = 'foodItem'
+    var_date = 'date'
     quantity = 0
     var_response = " following items are added to inventory: "
+    item_expiry = 'unknown'
 
     for x in config.SEQUENCE_LIST:
         count = var_count + x
         quantityType = var_quantityType + x
         foodItem = var_foodItem + x
+        dateSlot = var_date + x
+        expiry_days = 0
 
         if count in intent['slots']:
             if 'value' in intent['slots'][count]:
@@ -128,10 +133,24 @@ def handle_add_item(intent, session):
                     if 'value' in intent['slots'][foodItem]:
                         name_var = intent['slots'][foodItem]['value']
 
+                if dateSlot in intent['slots']:
+                    if 'value' in intent['slots'][dateSlot]:
+                        item_expiry = intent['slots'][dateSlot]['value']
+                        f = '%Y-%m-%d'
+                        date_from_alexa = datetime.strptime(item_expiry, f)
+                        today = datetime.now()
+                        print(date_from_alexa)
+                        print(today)
+                        expiry_days = (date_from_alexa - today).days
+
                 for x in config.FOOD_ITEM_DICT:
                     if x["slot_value"] == name_var:
                         print(x["name"], x["type"], x["expiry"])
-                        helper_functions.put_add_item(user_id, access_token, x["name"], quantity, quantity_type, x["type"], x["expiry"])
+                        if expiry_days < 1:
+                            expiry_days = int(x["expiry"])
+
+
+                        helper_functions.put_add_item(user_id, access_token, x["name"], quantity, quantity_type, x["type"], expiry_days)
                         var_response = var_response + str(quantity) + " " + quantity_type + " " + x["name"] + ", "
 
 
@@ -219,3 +238,14 @@ def handle_add_to_shopping_list(intent, session):
     print(add_to_shopping_list)
     res = helper_functions.add_to_shopping_list(user_id, add_to_shopping_list)
     return alexa_responses.get_add_item_shopping_list_response(res)
+
+@helper_functions.verify_alexa_login()
+def handle_test_date(intent, session):
+    var_date = 'date'
+    for x in config.SEQUENCE_LIST:
+        dateSlot = var_date + x
+        if dateSlot in intent['slots']:
+            if 'value' in intent['slots'][dateSlot]:
+                item_expiry = intent['slots'][dateSlot]['value']
+    print(item_expiry)
+    return alexa_responses.get_test_date_response(item_expiry)

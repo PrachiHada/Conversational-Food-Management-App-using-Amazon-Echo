@@ -84,12 +84,14 @@ def get_viewInventory_response(result):
 
 def addInventory_response():
     card_title = 'AddInventory'
-    speech_output = 'You have chosen to add inventory. Please provide input in format 4 apples or 1 lb apples'
+    speech_output = 'You have chosen to add inventory. Please provide input in format: quantity type food item expiry.'\
+                    'Example: 4 apples or 1 lb apples or 2 count apples expiry may twenty fifth'
     return build_response({}, build_speechlet_response(card_title,speech_output))
 
 def askQuestion_response():
     card_title = 'AskQuestion'
-    speech_output = 'Please ask your question in format: How many apples do I have'
+    speech_output = 'Please ask your question in format: How many food item do I have.'\
+                    'Example: How many apples do I have'
     return build_response({}, build_speechlet_response(card_title,speech_output))
 
 def get_questFormat_response(item, count):
@@ -106,7 +108,8 @@ def add_item_response(res):
 
 def updateInventory_response(intent, session):
     card_title = 'UpdateInventory'
-    speech_output = 'You have chosen to update inventory. Please provide amount of food consumed in format: update 4 count apples or update 1 pound apples'
+    speech_output = 'You have chosen to update inventory. Please provide amount of food consumed in format: update ' \
+                    'quantity quantity type food item. Example: update 4 count apples or update 1 pound apples'
     return build_response({}, build_speechlet_response(card_title,speech_output))
 
 def updateItem_response(res):
@@ -154,14 +157,21 @@ def get_create_shopping_list_response():
 
 def get_remove_item_shopping_list_response(res):
     card_title = 'RemoveFromShoppingList'
-    end_statement = 'What else would you like to do: to listen to menu options say: View Main Menu'
+    end_statement = 'to listen to menu options say: View Main Menu'
     speech_output = '{}. {}'.format(res, end_statement)
     print(speech_output)
     return build_response({}, build_speechlet_response(card_title, speech_output))
 
 def get_add_item_shopping_list_response(res):
     card_title = 'AddToShoppingList'
-    end_statement = 'What else would you like to do: to listen to menu options say: View Main Menu'
+    end_statement = 'To listen to shopping list say: View Shopping List. to listen to menu options say: View Main Menu'
     speech_output = '{}. {}'.format(res, end_statement)
+    print(speech_output)
+    return build_response({}, build_speechlet_response(card_title, speech_output))
+
+def get_test_date_response(res):
+    card_title = 'testDate'
+    end_statement = 'What else would you like to do: to listen to menu options say: View Main Menu'
+    speech_output = 'The date which you have input is {} and its type is {}.'.format(res, type(res))
     print(speech_output)
     return build_response({}, build_speechlet_response(card_title, speech_output))
