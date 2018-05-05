@@ -1,0 +1,1483 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "consume it",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AddItems",
+                    "slots": [
+                        {
+                            "name": "quantityTypeOne",
+                            "type": "quantity_type"
+                        },
+                        {
+                            "name": "countOne",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "countTwo",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "countThree",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "countFour",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "countFive",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "countSix",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "countSeven",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "countEight",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "countNine",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "countTen",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "quantityTypeTwo",
+                            "type": "quantity_type"
+                        },
+                        {
+                            "name": "quantityTypeThree",
+                            "type": "quantity_type"
+                        },
+                        {
+                            "name": "quantityTypeFour",
+                            "type": "quantity_type"
+                        },
+                        {
+                            "name": "quantityTypeFive",
+                            "type": "quantity_type"
+                        },
+                        {
+                            "name": "foodItemOne",
+                            "type": "foodItems"
+                        },
+                        {
+                            "name": "foodItemTwo",
+                            "type": "foodItems"
+                        },
+                        {
+                            "name": "foodItemThree",
+                            "type": "foodItems"
+                        },
+                        {
+                            "name": "foodItemFour",
+                            "type": "foodItems"
+                        },
+                        {
+                            "name": "foodItemFive",
+                            "type": "foodItems"
+                        },
+                        {
+                            "name": "dateOne",
+                            "type": "AMAZON.DATE"
+                        },
+                        {
+                            "name": "dateTwo",
+                            "type": "AMAZON.DATE"
+                        },
+                        {
+                            "name": "dateThree",
+                            "type": "AMAZON.DATE"
+                        },
+                        {
+                            "name": "dateFour",
+                            "type": "AMAZON.DATE"
+                        },
+                        {
+                            "name": "dateFive",
+                            "type": "AMAZON.DATE"
+                        },
+                        {
+                            "name": "expiryInfo",
+                            "type": "expiry_info"
+                        }
+                    ],
+                    "samples": [
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {expiryInfo} {dateOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {expiryInfo} {dateTwo}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {expiryInfo} {dateOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {expiryInfo} {dateTwo} {countThree} {quantityTypeThree} {foodItemThree} {expiryInfo} {dateThree}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {expiryInfo} {dateOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {expiryInfo} {dateTwo} {countThree} {quantityTypeThree} {foodItemThree} {expiryInfo} {dateThree} {countFour} {quantityTypeFour} {foodItemFour} {expiryInfo} {dateFour}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {expiryInfo} {dateOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {expiryInfo} {dateTwo} {countThree} {quantityTypeThree} {foodItemThree} {expiryInfo} {dateThree} {countFour} {quantityTypeFour} {foodItemFour} {expiryInfo} {dateFour} {countFive} {quantityTypeFive} {foodItemFive} {expiryInfo} {dateFive}",
+                        "add {countOne} {foodItemOne} {expiryInfo} {dateOne}",
+                        "add {countOne} {foodItemOne} {expiryInfo} {dateOne} {countTwo} {foodItemTwo} {expiryInfo} {dateTwo}",
+                        "add {countOne} {foodItemOne} {expiryInfo} {dateOne} {countTwo} {foodItemTwo} {expiryInfo} {dateTwo} {countThree} {foodItemThree} {expiryInfo} {dateThree}",
+                        "add {countOne} {foodItemOne} {expiryInfo} {dateOne} {countTwo} {foodItemTwo} {expiryInfo} {dateTwo} {countThree} {foodItemThree} {expiryInfo} {dateThree} {countFour} {foodItemFour} {expiryInfo} {dateFour}",
+                        "add {countOne} {foodItemOne} {expiryInfo} {dateOne} {countTwo} {foodItemTwo} {expiryInfo} {dateTwo} {countThree} {foodItemThree} {expiryInfo} {dateThree} {countFour} {foodItemFour} {expiryInfo} {dateFour} {countFive} {foodItemFive} {expiryInfo} {dateFive}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {expiryInfo} {dateOne}",
+                        "add {countOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {foodItemFour} {countFive} {foodItemFive}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {foodItemFour} {countFive} {foodItemFive}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {foodItemFour} {countFive} {foodItemFive}",
+                        "add {countOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {foodItemFour} {countFive} {foodItemFive}",
+                        "add {countOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {foodItemFour} {countFive} {foodItemFive}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {foodItemFour} {countFive} {foodItemFive}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour} {countFive} {foodItemFive}",
+                        "add {countOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour} {countFive} {foodItemFive}",
+                        "add {countOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour} {countFive} {foodItemFive}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour} {countFive} {foodItemFive}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour} {countFive} {foodItemFive}",
+                        "add {countOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour} {countFive} {foodItemFive}",
+                        "add {countOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour} {countFive} {foodItemFive}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour} {countFive} {foodItemFive}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {foodItemFour} {countFive} {quantityTypeFive} {foodItemFive}",
+                        "add {countOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {foodItemFour} {countFive} {quantityTypeFive} {foodItemFive}",
+                        "add {countOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {foodItemFour} {countFive} {quantityTypeFive} {foodItemFive}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {foodItemFour} {countFive} {quantityTypeFive} {foodItemFive}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {foodItemFour} {countFive} {quantityTypeFive} {foodItemFive}",
+                        "add {countOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {foodItemFour} {countFive} {quantityTypeFive} {foodItemFive}",
+                        "add {countOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {foodItemFour} {countFive} {quantityTypeFive} {foodItemFive}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {foodItemFour} {countFive} {quantityTypeFive} {foodItemFive}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour} {countFive} {quantityTypeFive} {foodItemFive}",
+                        "add {countOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour} {countFive} {quantityTypeFive} {foodItemFive}",
+                        "add {countOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour} {countFive} {quantityTypeFive} {foodItemFive}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour} {countFive} {quantityTypeFive} {foodItemFive}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour} {countFive} {quantityTypeFive} {foodItemFive}",
+                        "add {countOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour} {countFive} {quantityTypeFive} {foodItemFive}",
+                        "add {countOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour} {countFive} {quantityTypeFive} {foodItemFive}",
+                        "add {countOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {foodItemFour}",
+                        "add {countOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour}",
+                        "add {countOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour}",
+                        "add {countOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {foodItemFour}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {foodItemFour}",
+                        "add {countOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour}",
+                        "add {countOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {foodItemFour}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {foodItemFour}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {foodItemFour}",
+                        "add {countOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {foodItemFour}",
+                        "add {countOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree}  {foodItemThree}",
+                        "add {countOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree}",
+                        "add {countOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {foodItemThree}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {quantityTypeTwo} {countTwo} {foodItemTwo} {countThree} {foodItemThree}",
+                        "add {countOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {foodItemThree}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {foodItemThree}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {foodItemTwo}",
+                        "add {countOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} ",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} ",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} ",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour}",
+                        "add {countOne} {quantityTypeOne} {foodItemOne} {countTwo} {quantityTypeTwo} {foodItemTwo} {countThree} {quantityTypeThree} {foodItemThree} {countFour} {quantityTypeFour} {foodItemFour} {countFive} {quantityTypeFive} {foodItemFive}",
+                        "add {countOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {foodItemFour} {countFive} {foodItemFive}",
+                        "add {countOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {foodItemThree} {countFour} {foodItemFour}",
+                        "add {countOne} {foodItemOne} {countTwo} {foodItemTwo} {countThree} {foodItemThree}",
+                        "add {countOne} {foodItemOne} {countTwo} {foodItemTwo}",
+                        "add {countOne} {foodItemOne}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.PauseIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ResumeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "Registration",
+                    "slots": [
+                        {
+                            "name": "registration_code",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "registration code {registration_code}",
+                        "registration code is {registration_code}",
+                        "code is {registration_code}",
+                        "The registration code is {registration_code}"
+                    ]
+                },
+                {
+                    "name": "CheckProfile",
+                    "slots": [],
+                    "samples": [
+                        "check profile"
+                    ]
+                },
+                {
+                    "name": "AddInventory",
+                    "slots": [],
+                    "samples": [
+                        "Add inventory"
+                    ]
+                },
+                {
+                    "name": "ViewInventory",
+                    "slots": [],
+                    "samples": [
+                        "View Inventory"
+                    ]
+                },
+                {
+                    "name": "UpdateInventory",
+                    "slots": [],
+                    "samples": [
+                        "Update Inventory"
+                    ]
+                },
+                {
+                    "name": "AskQuestion",
+                    "slots": [],
+                    "samples": [
+                        "ask question about inventory"
+                    ]
+                },
+                {
+                    "name": "QuesFormat",
+                    "slots": [
+                        {
+                            "name": "foodItems",
+                            "type": "foodItems"
+                        }
+                    ],
+                    "samples": [
+                        "how much {foodItems} do I have",
+                        "how many {foodItems} do I have"
+                    ]
+                },
+                {
+                    "name": "UpdateItem",
+                    "slots": [
+                        {
+                            "name": "quantity",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "quantityType",
+                            "type": "quantity_type"
+                        },
+                        {
+                            "name": "foodItem",
+                            "type": "foodItems"
+                        }
+                    ],
+                    "samples": [
+                        "Update {quantity} {quantityType} {foodItem} "
+                    ]
+                },
+                {
+                    "name": "MainMenu",
+                    "slots": [],
+                    "samples": [
+                        "view main menu"
+                    ]
+                },
+                {
+                    "name": "MostConsumed",
+                    "slots": [],
+                    "samples": [
+                        "View Most Consumed Food Items"
+                    ]
+                },
+                {
+                    "name": "MostWasted",
+                    "slots": [],
+                    "samples": [
+                        "View Most Wasted Food Items"
+                    ]
+                },
+                {
+                    "name": "SuggestShoppingList",
+                    "slots": [],
+                    "samples": [
+                        "What should I buy"
+                    ]
+                },
+                {
+                    "name": "ViewShoppingList",
+                    "slots": [],
+                    "samples": [
+                        "view shopping list"
+                    ]
+                },
+                {
+                    "name": "CreateNewShoppingList",
+                    "slots": [],
+                    "samples": [
+                        "create new shopping list"
+                    ]
+                },
+                {
+                    "name": "AddItemsNewShoppingList",
+                    "slots": [
+                        {
+                            "name": "itemOne",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemTwo",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemThree",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemFour",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemFive",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemSix",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemSeven",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemEight",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemNine",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemTen",
+                            "type": "AMAZON.Food"
+                        }
+                    ],
+                    "samples": [
+                        "Create shopping list {itemOne}",
+                        "Create shopping list {itemOne} {itemTwo}",
+                        "Create shopping list {itemOne} {itemTwo} {itemThree}",
+                        "Create shopping list {itemOne} {itemTwo} {itemThree} {itemFour}",
+                        "Create shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive}",
+                        "Create shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive} {itemSix}",
+                        "Create shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive} {itemSix} {itemSeven}",
+                        "Create shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive} {itemSix} {itemSeven} {itemEight}",
+                        "Create shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive} {itemSix} {itemSeven} {itemEight} {itemNine}",
+                        "Create shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive} {itemSix} {itemSeven} {itemEight} {itemNine} {itemTen}"
+                    ]
+                },
+                {
+                    "name": "RemoveFromShoppingList",
+                    "slots": [
+                        {
+                            "name": "itemOne",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemTwo",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemThree",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemFour",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemFive",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemSix",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemSeven",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemEight",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemNine",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemTem",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemTen",
+                            "type": "AMAZON.Food"
+                        }
+                    ],
+                    "samples": [
+                        "remove from shopping list {itemOne}",
+                        "remove from shopping list {itemOne} {itemTwo}",
+                        "remove from shopping list {itemOne} {itemTwo} {itemThree}",
+                        "remove from shopping list {itemOne} {itemTwo} {itemThree} {itemFour}",
+                        "remove from shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive}",
+                        "remove from shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive} {itemSix}",
+                        "remove from shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive} {itemSix} {itemSeven}",
+                        "remove from shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive} {itemSix} {itemSeven} {itemEight}",
+                        "remove from shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive} {itemSix} {itemSeven} {itemEight} {itemNine}",
+                        "remove from shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive} {itemSix} {itemSeven} {itemEight} {itemNine} {itemTen}"
+                    ]
+                },
+                {
+                    "name": "AddToShoppingList",
+                    "slots": [
+                        {
+                            "name": "itemOne",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemTwo",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemThree",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemFour",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemFive",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemSix",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemSeven",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemEight",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemNine",
+                            "type": "AMAZON.Food"
+                        },
+                        {
+                            "name": "itemTen",
+                            "type": "AMAZON.Food"
+                        }
+                    ],
+                    "samples": [
+                        "add to shopping list {itemOne}",
+                        "add to shopping list {itemOne} {itemTwo}",
+                        "add to shopping list {itemOne} {itemTwo} {itemThree}",
+                        "add to shopping list {itemOne} {itemTwo} {itemThree} {itemFour}",
+                        "add to shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive}",
+                        "add to shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive} {itemSix}",
+                        "add to shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive} {itemSix} {itemSeven}",
+                        "add to shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive} {itemSix} {itemSeven} {itemEight}",
+                        "add to shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive} {itemSix} {itemSeven} {itemEight} {itemNine}",
+                        "add to shopping list {itemOne} {itemTwo} {itemThree} {itemFour} {itemFive} {itemSix} {itemSeven} {itemEight} {itemNine} {itemTen}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "foodItems",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "salt"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sugar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tea"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "coffee"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cake"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cookies"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "biscuits"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cereals"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cornflakes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eggs"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "soybean"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "peas"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lentils"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "chickpeas"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "beans"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rice"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wheat"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "oat"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "maize"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "barley"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "turkey"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sausage"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sausages"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shrimp"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "salami"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pork"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lamb"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "egg"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "chicken"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "beef"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bacon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "yogurt"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "whipped cream"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sour cream"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "paneer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "milk"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "margarine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ice cream"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cream"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cheese"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "butter"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sweet potato"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spinach"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lettuce"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "green onions"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "green onion"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "green beans"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "green bean"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cucumbers"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cucumber"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "celeries"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "celery"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cauliflowers"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cauliflower"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bell peppers"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bell pepper"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "strawberries"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "raspberries"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "plums"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "plum"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pineapples"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pineapple"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "peaches"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "peach"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nectarines"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nectarine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "limes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lime"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lemons"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lemon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "grapefruits"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "grapefruit"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blueberries"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blackberries"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "onions"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "onion"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "zucchini"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tomatoes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tomato"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "peppers"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pepper"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mushrooms"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mushroom"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "garlic"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "carrots"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "carrot"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cabbage"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "broccoli"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "potatoes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "potato"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "beets"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "beet"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "asparagus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "watermelons"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "watermelon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pears"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pear"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "papaya"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "oranges"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "orange"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mangoes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mango"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "guavas"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "guava"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "grapes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bananas"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "banana"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "avocado"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "apples"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "apple"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "quantity_type",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "fluid ounce"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gallon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ounce"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lb"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pound"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "count"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "expiry_info",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "use by"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "expiring"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "expiring on"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "expiry"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "consume by"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sell by"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "expiry date"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "QuesFormat",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "foodItems",
+                            "type": "foodItems",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "AddItems",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "quantityTypeOne",
+                            "type": "quantity_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "countOne",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "countTwo",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "countThree",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "countFour",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "countFive",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "countSix",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1253063475543.1058126194428"
+                            }
+                        },
+                        {
+                            "name": "countSeven",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1253063475543.963372746426"
+                            }
+                        },
+                        {
+                            "name": "countEight",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1253063475543.568669244638"
+                            }
+                        },
+                        {
+                            "name": "countNine",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1253063475543.712257463813"
+                            }
+                        },
+                        {
+                            "name": "countTen",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1253063475543.22074414967"
+                            }
+                        },
+                        {
+                            "name": "quantityTypeTwo",
+                            "type": "quantity_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "quantityTypeThree",
+                            "type": "quantity_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "quantityTypeFour",
+                            "type": "quantity_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "quantityTypeFive",
+                            "type": "quantity_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "foodItemOne",
+                            "type": "foodItems",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "foodItemTwo",
+                            "type": "foodItems",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "foodItemThree",
+                            "type": "foodItems",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "foodItemFour",
+                            "type": "foodItems",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "foodItemFive",
+                            "type": "foodItems",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "dateOne",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.235533994321.467012787211"
+                            }
+                        },
+                        {
+                            "name": "dateTwo",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "dateThree",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "dateFour",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "dateFive",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "expiryInfo",
+                            "type": "expiry_info",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.174821663158.28308650296",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please say clearly which food item's quantity you want to know"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1328053869045.1498164239773",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please say clearly in format quantity food item. Example four apples, or two pound potatoes"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1328053869045.454729188684",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please say clearly in format quantity food item. Example four apples, or two pound potatoes"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1253063475543.22074414967",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please say clearly in format quantity food item. Example four apples, or two pound potatoes"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1253063475543.712257463813",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please say clearly in format quantity food item. Example four apples, or two pound potatoes"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1253063475543.568669244638",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please say clearly in format quantity food item. Example four apples, or two pound potatoes"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1253063475543.963372746426",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please say clearly in format quantity food item. Example four apples, or two pound potatoes"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1253063475543.1058126194428",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please say clearly in format quantity food item. Example four apples, or two pound potatoes"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1253063475543.806233852411",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please say clearly in format quantity food item. Example four apples, or two pound potatoes"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1253063475543.806534705755",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please say clearly in format quantity food item. Example four apples, or two pound potatoes"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1253063475543.1456421241622",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please say clearly in format quantity food item. Example four apples, or two pound potatoes"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1253063475543.626777054917",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please say clearly in format quantity food item. Example four apples, or two pound potatoes"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.235533994321.467012787211",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please repeat"
+                    }
+                ]
+            }
+        ]
+    }
+}
